@@ -1,0 +1,32 @@
+<html>
+<head>
+        <title>Homie Book</title>
+</head>
+<body>
+    <h1>Homie Book</h1>
+
+    {% if contacts is not empty %}
+        <p>Here are all your homies:</p>
+        <ul>
+            {% for contact in contacts %}
+                <li><p>{{contact.getName}} {{contact.getPhone}} {{contact.getHome}}</p></li>
+
+            {% endfor %}
+        </ul>
+    {% endif %}
+
+    <form action = '/contacts' method = 'post'>
+            <label for='name'>Homie's Name</label>
+            <input id='name' name='name' type='text'>
+            <label for='phone'>Homie's Digits</label>
+            <input id='phone' name='phone' type=number>
+            <label for='home'>Homie's Address</label>
+            <input id='home' name='home' type='text'>
+            <button type='submit' class='btn'>Add Homie</button>
+    </form>
+
+    <form action='/delete_contact' method='post'>
+        <button type='submit'>delete</button>
+    </form>
+</body>
+</html>
