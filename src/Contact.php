@@ -36,7 +36,7 @@ class Contact
 
     function getHome()
     {
-        return $this->phone;
+        return $this->home;
     }
 
     function setHome()
